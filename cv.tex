@@ -1,13 +1,16 @@
 \documentclass[10pt]{article}
 
 \usepackage{array}
-\usepackage[style=numeric-comp, sorting=none]{biblatex}
+\usepackage[
+    style=numeric-comp,
+    sorting=ydnt
+  ]{biblatex}
+\usepackage{calc}
 \usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
 \usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{nopageno}
 \usepackage{tabularx}
 \usepackage{titlesec}
 
@@ -15,10 +18,11 @@
 \newlength{\separatorcolumnwidth}
 \newlength{\photowidth}
 
-\setlength{\hintscolumnwidth}{7.5em}
+\setlength{\hintscolumnwidth}{8em}
 \setlength{\separatorcolumnwidth}{1em}
 \setlength{\photowidth}{7.5em}
 
+%\colorlet{color1}{blue!60!green!90}
 \colorlet{color1}{blue!60!green!90}
 \colorlet{color2}{black!70}
 
@@ -33,7 +37,7 @@
   \par\addvspace{#1}
 }
 
-\newcommand{\eduwork}[6][1em]{%
+\newcommand{\eduwork}[6][0.5em]{%
   \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{\textbf{#4}. #5.%
     \ifx&#6&%
     \else{\newline\parbox[t]{\linewidth}{\raggedright #6}}\fi}
@@ -47,79 +51,86 @@
 \newcommand{\address}[1]{\def\address{#1}}
 \newcommand{\photo}[1]{\def\photo{#1}}
 
+\newcommand{\contactitem}[2]
+  {$\vcenter{\hbox{\includegraphics[width=1em]{#1}}}$ \, #2\\[0.2em]}
+
 \renewcommand*{\maketitle}{%
   \noindent
-  \parbox{0.5\linewidth}{%
+  \parbox[b]{0.5\linewidth}{%
     {\Huge\firstname{} \lastname} \\[1em]
     {\Large\textcolor{color2}{\textit{\title}}}
   }
   \hfill
   \begin{tabular}{@{}>{\color{color2}}r@{}}%
-    \parbox{0.3\linewidth}{\raggedleft\address}
+    \parbox[b]{0.4\linewidth}{%
+      \contactitem{mail}{\address}
+      \contactitem{phone}{\phone}
+      \contactitem{email}{\nolinkurl\email}
+      %\contactitem{linkedin}{\linkedin}
+      \contactitem{mouse}{\url{\website}}
+    }
     %$\vcenter{\framebox{\includegraphics[width=\photowidth]{\photo}}}$
-  \end{tabular}\par
+  \end{tabular}
 }
 
 \renewcommand*{\familydefault}{\sfdefault}
 
-\setlist[itemize]{noitemsep, topsep=0pt}
-
 \titleformat{\section}  % Customize the \section command 
   {\Large\color{color1}\raggedright}
-  {}{0em}   % Can be used to give a prefix to all sections, like 'Section ...'
-  {\titlerule\\}  % Can be used to insert code before the heading
-  %[\titlerule] % Inserts a horizontal line after the heading
+  {}{0em}
+  %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
+  {}  % Can be used to insert code before the heading
+  [\titlerule] % Inserts a horizontal line after the heading
 
 \titleformat{\subsection}
   {\large\color{color1}\raggedright}
   {}{0em}
+  %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
   {}
+
+\titlespacing*{\section}{0pt}{1.5em}{0.75em}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.25em}
 
 \urlstyle{sf}
 
 \bibliography{refs}
 
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-
-\cfoot{\textcolor{color2}{%
-    \url{\website} \textperiodcentered{}
-    \nolinkurl{\email} \textperiodcentered{}
-    \phone}}
-
 \def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
 
+\newcommand{\Peter}{Dr.~A.~P.~Young}
+\newcommand{\John}{Dr.~John~Price}
+
 \name{Matthew}{Wittmann}
-\title{Ph.D. in Physics}
+\title{Curriculum Vitae}
 \phone{+1 303 552 7753}
 \email{mwittman@ucsc.edu}
 \website{people.ucsc.edu/~mwittman}
-\address{UC Santa Cruz \\ Physics Department \\ 1156 High Street \\ Santa Cruz, CA 95060}
+\address{317 Chace Street, Santa Cruz, CA 95060}
 \photo{photo.jpg}
 
 \begin{document}
 
 \maketitle
 
+\vspace{-1em}
 \section{Education}
 
 \eduwork{9/2009}{present}
-  {Ph.D. in Physics (expected June 2015)}
+  {Ph.D. in Physics \textnormal{(expected June 2015)}}
   {University of California, Santa Cruz}
-  {Supervised by Dr. Peter Young}
+  {Supervised by \Peter}
 
 \eduwork{9/2009}{6/2011}
   {M.S. in Physics}
   {University of California, Santa Cruz}
-  {Research title: ``Spin glasses in the nonextensive regime'' \\
-   Supervised by Dr. Peter Young}
+  {``Spin glasses in the nonextensive regime'',
+   supervised by \Peter}
 
 \eduwork{8/2005}{5/2009}
   {B.A. in Physics and Mathematics}
   {University of Colorado, Boulder}
   {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA \\
-   Research in acoustic network analysis supervised by Dr. John Price}
+   Research in acoustic network analysis supervised by \John}
 
 \subsection{Workshops \& Short Courses}
 
@@ -139,7 +150,7 @@
   {Research areas: spin glasses~\cite{wittmann2012spin, wittmann2013low, wittmann2014low},
    finite-size scaling~\cite{wittmann2014finite},
    quantum algorithms~\cite{wittmann2014distinguishing} \\
-   Supervised by Dr. Peter Young
+   Supervised by \Peter.
   }
 
 \eduwork{9/2014}{11/2014}
@@ -151,7 +162,7 @@
 \eduwork{1/2008}{5/2009}
   {Undergraduate Researcher}
   {University of Colorado, Boulder}
-  {I worked with Dr. John Price developing a system for acoustic vector network
+  {I worked with \John{} developing a system for acoustic vector network
    analysis analogous to microwave VNAs with the eventual goal of studying
    musical acoustics.}
 
@@ -159,7 +170,8 @@
 
 \cvitem{Physics}{disordered systems, statistical physics, quantum algorithms}
 \cvitem{Modeling/Analysis}{Monte Carlo simulation, simulated annealing, genetic algorithms, numerical linear algebra}
-\cvitem{Computer}{C/\CC, Python/Numpy/Scipy, MATLAB/Octave, Mathematica, Pandas, Git, Linux, \LaTeX}
+\cvitem{Computer}{C/\CC, Python/Numpy/Scipy, MATLAB/Octave, Mathematica, Pandas,
+  Git, Linux, \LaTeX, HTML/CSS, JavaScript}
 
 \section{Teaching Experience}
 
@@ -169,9 +181,7 @@
 
 \eduwork{8/2008}{5/2009}
   {Instructor Assistant in Mathematics}
-  {University of Colorado, Boulder}
-  {As an instructor assistant with the Student Academic Services Center, I
-   worked with students in precalc-level supplementary math courses.}
+  {University of Colorado, Boulder}{}
 
 \printbibliography[title={Publications \& Conference Talks}]
 
