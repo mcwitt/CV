@@ -30,7 +30,7 @@
 
 \newcommand{\hintstyle}[1]{\raggedleft \textcolor{color2}{#1}}
 
-\newcommand{\cvitem}[3][0.5em]{%
+\newcommand{\cvitem}[3][0.4em]{%
   \noindent
   \begin{tabularx}{\linewidth}
     {@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}X@{}}
@@ -39,7 +39,7 @@
   \par\addvspace{#1}
 }
 
-\newcommand{\eduwork}[6][0.5em]{%
+\newcommand{\eduwork}[6][0.4em]{%
   \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{\textbf{#4}. #5.%
     \ifx&#6&%
     \else{\newline\parbox[t]{\linewidth}{\raggedright #6}}\fi}
@@ -53,26 +53,30 @@
 \newcommand{\address}[1]{\def\address{#1}}
 \newcommand{\photo}[1]{\def\photo{#1}}
 
+\renewcommand{\arraystretch}{1.2}
+
+\newenvironment{contactinfo}
+  {\begin{tabular}[t]{@{}r@{\hspace{0.7em}}>{\color{color2}}l@{}}}
+  {\end{tabular}}
+
 \newcommand{\contactitem}[2]
-  {$\vcenter{\hbox{\includegraphics[width=1em]{#1}}}$ \, #2\\[0.2em]}
+  {$\vcenter{\hbox{\includegraphics[width=1em]{#1}}}$ & #2 \\}
 
 \renewcommand*{\maketitle}{%
   \noindent
-  \parbox[b]{0.5\linewidth}{%
+  \parbox[t]{0.5\linewidth}{%
+    %\framebox{\includegraphics[width=\photowidth]{\photo}}
     {\Huge\firstname{} \lastname} \\[1em]
     {\Large\textcolor{color2}{\textit{\title}}}
   }
   \hfill
-  \begin{tabular}{@{}>{\color{color2}}r@{}}%
-    \parbox[b]{0.4\linewidth}{%
-      \contactitem{mail}{\address}
-      \contactitem{phone}{\phone}
-      \contactitem{email}{\nolinkurl\email}
-      %\contactitem{linkedin}{\linkedin}
-      \contactitem{mouse}{\url{\website}}
-    }
-    %$\vcenter{\framebox{\includegraphics[width=\photowidth]{\photo}}}$
-  \end{tabular}
+  \begin{contactinfo}
+    \contactitem{mail}{\address}
+    \contactitem{phone}{\phone}
+    \contactitem{email}{\nolinkurl\email}
+    %\contactitem{linkedin}{\linkedin}
+    \contactitem{mouse}{\url{\website}}
+  \end{contactinfo}
 }
 
 \renewcommand*{\familydefault}{\sfdefault}
@@ -90,7 +94,7 @@
   %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
   {}
 
-\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+\titlespacing*{\section}{0pt}{1em}{0.5em}
 \titlespacing*{\subsection}{0pt}{0.5em}{0.25em}
 
 \urlstyle{sf}
@@ -108,7 +112,7 @@
 \email{mcwitt@gmail.com}
 \website{people.ucsc.edu/~mwittman}
 \address{307 Cayuga St, Santa Cruz, CA 95062}
-\photo{photo.jpg}
+\photo{me.jpg}
 
 \begin{document}
 
