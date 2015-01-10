@@ -9,38 +9,42 @@
   ]{biblatex}
 \usepackage{calc}
 \usepackage{xcolor}
-\usepackage{fullpage}
+\usepackage[cm]{fullpage}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{nopageno}
 \usepackage{tabularx}
 \usepackage{titlesec}
+\usepackage{enumitem}
 
 \newlength{\hintscolumnwidth}
 \newlength{\separatorcolumnwidth}
+\newlength{\iconwidth}
 \newlength{\photowidth}
 
-\setlength{\hintscolumnwidth}{8em}
+\setlength{\hintscolumnwidth}{7.2em}
 \setlength{\separatorcolumnwidth}{1em}
-\setlength{\photowidth}{7.5em}
+\setlength{\iconwidth}{0.9em}
+\setlength{\photowidth}{\hintscolumnwidth}
 
 %\colorlet{color1}{blue!60!green!90}
-\colorlet{color1}{blue!60!green!90}
+\colorlet{color1}{blue!70!green!90}
 \colorlet{color2}{black!70}
 
 \newcommand{\hintstyle}[1]{\raggedleft \textcolor{color2}{#1}}
 
-\newcommand{\cvitem}[3][0.4em]{%
+\newcommand{\cvitem}[3][0.5em]{%
   \noindent
   \begin{tabularx}{\linewidth}
     {@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}X@{}}
-    \hintstyle{#2}&{#3}
+    \hintstyle{\it#2}&{#3}
   \end{tabularx}
   \par\addvspace{#1}
 }
 
-\newcommand{\eduwork}[6][0.4em]{%
-  \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{\textbf{#4}. #5.%
+\newcommand{\eduwork}[6][0.5em]{%
+  %\cvitem[#1]{#2\ifx&#3&\else--#3\fi}{\textbf{#4}. #5.%
+  \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{#4. \color{color2} #5.%
     \ifx&#6&%
     \else{\newline\parbox[t]{\linewidth}{\raggedright #6}}\fi}
 }
@@ -50,33 +54,44 @@
 \newcommand{\phone}[1]{\def\phone{#1}}
 \newcommand{\email}[1]{\def\email{#1}}
 \newcommand{\website}[1]{\def\website{#1}}
+\newcommand{\linkedin}[1]{\def\linkedin{#1}}
+\newcommand{\researchgate}[1]{\def\researchgate{#1}}
 \newcommand{\address}[1]{\def\address{#1}}
 \newcommand{\photo}[1]{\def\photo{#1}}
 
-\renewcommand{\arraystretch}{1.2}
+\newenvironment{contactinfo}{\begin{itemize}\setlength\itemsep{0em}}{\end{itemize}}
+\newcommand{\icon}[1]{\includegraphics[width=\iconwidth]{#1}}
+\newcommand{\contactitem}[2]{\item[\icon{#1}]{\color{color2}\footnotesize #2}}
 
-\newenvironment{contactinfo}
-  {\begin{tabular}[t]{@{}r@{\hspace{0.7em}}>{\color{color2}}l@{}}}
-  {\end{tabular}}
-
-\newcommand{\contactitem}[2]
-  {$\vcenter{\hbox{\includegraphics[width=1em]{#1}}}$ & #2 \\}
+\setlist{nolistsep}
 
 \renewcommand*{\maketitle}{%
   \noindent
-  \parbox[t]{0.5\linewidth}{%
-    %\framebox{\includegraphics[width=\photowidth]{\photo}}
+  \parbox[b]{\hintscolumnwidth}{%
+    %\framebox{\includegraphics[width=\photowidth]{\photo}}%
+    \raisebox{-0.3em}{\includegraphics[width=\photowidth]{\photo}}%
+  }%
+  \hspace{\separatorcolumnwidth}%
+  \parbox[b]{0.4\linewidth}{%
     {\Huge\firstname{} \lastname} \\[1em]
     {\Large\textcolor{color2}{\textit{\title}}}
-  }
-  \hfill
-  \begin{contactinfo}
-    \contactitem{mail}{\address}
-    \contactitem{phone}{\phone}
-    \contactitem{email}{\nolinkurl\email}
-    %\contactitem{linkedin}{\linkedin}
-    \contactitem{mouse}{\url{\website}}
-  \end{contactinfo}
+    \vspace{1em}
+  }%
+  \hfill%
+  \parbox[b]{0.2\linewidth}{%
+    \begin{contactinfo}
+      \contactitem{mail}{\address}
+      \contactitem{phone}{\phone}
+      \contactitem{email}{\url{\email}}
+    \end{contactinfo}
+  }%
+  \parbox[b]{0.3\linewidth}{%
+    \begin{contactinfo}
+      \contactitem{mouse}{\url{\website}}
+      \contactitem{lilogo}{\linkedin}
+      \contactitem{rglogo}{\researchgate}
+    \end{contactinfo}
+  }%
 }
 
 \renewcommand*{\familydefault}{\sfdefault}
@@ -94,8 +109,8 @@
   %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
   {}
 
-\titlespacing*{\section}{0pt}{1em}{0.5em}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.25em}
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.4em}
 
 \urlstyle{sf}
 
@@ -111,32 +126,33 @@
 \phone{+1 303 552 7753}
 \email{mcwitt@gmail.com}
 \website{people.ucsc.edu/~mwittman}
-\address{307 Cayuga St, Santa Cruz, CA 95062}
-\photo{me.jpg}
+\linkedin{\url{linkedin.com/in/mcwittmann}}
+\researchgate{\url{researchgate.net/profile/Matthew_Wittmann}}
+\address{307 Cayuga St \newline{} Santa Cruz, CA 95062}
+\photo{me-fuzzy.jpg}
 
 \begin{document}
 
 \maketitle
 
-\vspace{-2em}
 \section{Education}
 
 \eduwork{9/2009}{6/2015}
   {PhD in Physics \textnormal{(expected)}}
   {University of California, Santa Cruz}
-  {Supervised by \Peter}
+  {Supervised by \Peter.}
 
 \eduwork{9/2009}{6/2011}
   {MS in Physics}
   {University of California, Santa Cruz}
   {``Spin glasses in the nonextensive regime'',
-   supervised by \Peter}
+   supervised by \Peter.}
 
 \eduwork{8/2005}{5/2009}
   {BA in Physics and Mathematics}
   {University of Colorado, Boulder}
   {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA \\
-   Research in acoustic network analysis supervised by \John}
+   Research in acoustic network analysis supervised by \John.}
 
 \subsection{Workshops \& Short Courses}
 
@@ -172,14 +188,17 @@
 \eduwork{1/2008}{5/2009}
   {Undergraduate Researcher}
   {University of Colorado, Boulder}
-  {I worked with \John{} developing a system for acoustic vector network
-   analysis analogous to microwave VNAs with the eventual goal of studying
-   musical acoustics.}
+  {I worked with \John{} on developing a system for acoustic vector network
+    analysis analogous to microwave VNAs with the eventual goal of studying
+    musical acoustics.}
 
 \section{Skills \& Expertise}
 
-\cvitem{Physics}{disordered systems, statistical physics, quantum algorithms}
-\cvitem{Modeling/Analysis}{Monte Carlo simulation, simulated annealing, genetic algorithms, numerical linear algebra}
+\cvitem{Math/Physics}{disordered systems, statistical physics, quantum mechanics,
+  quantum algorithms, graph theory, satisfiability}
+\cvitem{Modeling/\\Analysis}
+{Monte Carlo simulation, simulated annealing, genetic algorithms, nonlinear
+  fitting, numerical linear algebra, error analysis}
 \cvitem{Computer}{C/\CC, Python/Numpy/Scipy, MATLAB/Octave, Mathematica, Pandas,
   Git, Linux, \LaTeX, HTML/CSS, JavaScript}
 
