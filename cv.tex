@@ -3,7 +3,8 @@
 \usepackage{array}
 \usepackage[
     style=numeric-comp,
-    sorting=ydnt,
+    %sorting=ydnt,
+    sorting=none,
     doi=false,
     url=false
   ]{biblatex}
@@ -37,16 +38,16 @@
   \noindent
   \begin{tabularx}{\linewidth}
     {@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}X@{}}
-    \hintstyle{\it#2}&{#3}
+    \hintstyle{#2}&{#3}
   \end{tabularx}
   \par\addvspace{#1}
 }
 
 \newcommand{\eduwork}[6][0.5em]{%
   %\cvitem[#1]{#2\ifx&#3&\else--#3\fi}{\textbf{#4}. #5.%
-  \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{#4. \color{color2} #5.%
+  \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{#4. \textit{#5}.%
     \ifx&#6&%
-    \else{\newline\parbox[t]{\linewidth}{\raggedright #6}}\fi}
+    \else{\newline\parbox[t]{\linewidth}{\leavevmode\color{color2}#6}}\fi}
 }
 
 \newcommand{\name}[2]{\def\firstname{#1}\def\lastname{#2}}
@@ -109,8 +110,8 @@
   %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
   {}
 
-\titlespacing*{\section}{0pt}{1.2em}{0.6em}
-\titlespacing*{\subsection}{0pt}{0.8em}{0.4em}
+\titlespacing*{\section}{0pt}{1.2em}{0.8em}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.5em}
 
 \urlstyle{sf}
 
@@ -118,7 +119,7 @@
 
 \def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
 
-\newcommand{\Peter}{Dr.~A.~P.~Young}
+\newcommand{\Peter}{Dr.~A.~Peter~Young}
 \newcommand{\John}{Dr.~John~Price}
 
 \name{Matthew}{Wittmann}
@@ -134,6 +135,8 @@
 \begin{document}
 
 \maketitle
+
+%\vspace{-0.5em}
 
 \section{Education}
 
@@ -151,8 +154,8 @@
 \eduwork{8/2005}{5/2009}
   {BA in Physics and Mathematics}
   {University of Colorado, Boulder}
-  {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA \\
-   Research in acoustic network analysis supervised by \John.}
+  {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA. \\
+   Research in acoustic vector network analysis supervised by \John.}
 
 \subsection{Workshops \& Short Courses}
 
@@ -173,36 +176,34 @@
 \eduwork{9/2010}{present}%
   {Graduate Student Researcher}
   {University of California, Santa Cruz}
-  {Research areas: spin glasses~\cite{wittmann2012spin, wittmann2013low, wittmann2014low},
-   finite-size scaling~\cite{wittmann2014finite},
-   quantum algorithms~\cite{wittmann2014distinguishing} \\
-   Supervised by \Peter.
+  {With supervisor \Peter, I have studied topics in statistical and
+    computational physics including
+    spin glasses~\cite{wittmann2012spin, wittmann2013low, wittmann2014low},
+    finite-size scaling in high-dimensional systems~\cite{wittmann2014finite},
+    quantum algorithms~\cite{wittmann2014distinguishing},
+    and classical optimization problems~\cite{wittmann2014scheduling}.
   }
 
 \eduwork{9/2014}{11/2014}
   {Guest Researcher}
-  {Max Planck Institute for the Physics of Complex Systems, Dresden}
+  {Max Planck Institute for the Physics of Complex Systems, Dresden, Germany}
   {I studied finite-size scaling in systems above the upper critical dimension
-   and spin glass dynamics using large-scale computer simulations.}
+     and spin glass dynamics using large-scale computer simulations.}
 
 \eduwork{1/2008}{5/2009}
   {Undergraduate Researcher}
   {University of Colorado, Boulder}
   {I worked with \John{} on developing a system for acoustic vector network
-    analysis analogous to microwave VNAs with the eventual goal of studying
+    analysis analogous to microwave VNAs with the ultimate goal of studying
     musical acoustics.}
 
-\section{Skills \& Expertise}
+\section{Teaching \& Outreach}
 
-\cvitem{Math/Physics}{disordered systems, statistical physics, quantum mechanics,
-  quantum algorithms, graph theory, satisfiability}
-\cvitem{Modeling/\\Analysis}
-{Monte Carlo simulation, simulated annealing, genetic algorithms, nonlinear
-  fitting, numerical linear algebra, error analysis}
-\cvitem{Computer}{C/\CC, Python/Numpy/Scipy, MATLAB/Octave, Mathematica, Pandas,
-  Git, Linux, \LaTeX, HTML/CSS, JavaScript}
+\eduwork{1/2014}{}
+  {Juror at 2014 USA Young Physicists Tournament}{San Jose, CA}{}
 
-\section{Teaching Experience}
+\eduwork{1/2014}{}
+  {Judge at 2014 Pacific Collegiate School Science Fair}{Santa Cruz, CA}{}
 
 \eduwork{9/2009}{9/2011}
   {TA in Physics and Mathematics}
@@ -215,6 +216,18 @@
   {University of Colorado, Boulder}
   {Led tutorials in supplemental math courses at the precalculus level.}
 
-\printbibliography[title={Publications \& Conference Talks}]
+\section{Skills \& Expertise}
+
+\cvitem{Math/Physics}{disordered systems, statistical physics, quantum mechanics,
+  quantum algorithms, graph theory, satisfiability}
+\cvitem{Modeling/\\Analysis}
+{Monte Carlo simulation, nonlinear fitting, error analysis, simulated
+  annealing, genetic algorithms, numerical linear algebra}
+\cvitem{Computer}{C/\CC, Python/Numpy/Scipy, MATLAB/Octave, Mathematica, Pandas,
+  Git, Linux, \LaTeX, HTML/CSS, JavaScript}
+\cvitem{Interests/\\Hobbies}{cycling, hiking, backpacking, playing music
+  (guitar, cello, piano)}
+
+\printbibliography[title={Publications \& Conference Presentations}]
 
 \end{document}
