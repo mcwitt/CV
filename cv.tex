@@ -18,15 +18,15 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 
-\newlength{\hintscolumnwidth}
-\newlength{\separatorcolumnwidth}
+\newlength{\hintscolwidth}
+\newlength{\sepcolwidth}
 \newlength{\iconwidth}
 \newlength{\photowidth}
 
-\setlength{\hintscolumnwidth}{7.2em}
-\setlength{\separatorcolumnwidth}{1em}
+\setlength{\hintscolwidth}{7.2em}
+\setlength{\sepcolwidth}{1em}
 \setlength{\iconwidth}{0.9em}
-\setlength{\photowidth}{\hintscolumnwidth}
+\setlength{\photowidth}{\hintscolwidth}
 
 %\colorlet{color1}{blue!60!green!90}
 \colorlet{color1}{blue!70!green!90}
@@ -34,20 +34,16 @@
 
 \newcommand{\hintstyle}[1]{\raggedleft \textcolor{color2}{#1}}
 
-\newcommand{\cvitem}[3][0.5em]{%
-  \noindent
-  \begin{tabularx}{\linewidth}
-    {@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}X@{}}
-    \hintstyle{#2}&{#3}
-  \end{tabularx}
-  \par\addvspace{#1}
-}
+\newenvironment{cvlist}[1][0.25em]
+  {\noindent\setlength\extrarowheight{#1}%
+   \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hspace{\sepcolwidth}}X@{}}}
+  {\endtabularx}
 
-\newcommand{\eduwork}[6][0.5em]{%
-  %\cvitem[#1]{#2\ifx&#3&\else--#3\fi}{\textbf{#4}. #5.%
-  \cvitem[#1]{#2\ifx&#3&\else--#3\fi}{#4. \textit{#5}.%
-    \ifx&#6&%
-    \else{\newline\parbox[t]{\linewidth}{\leavevmode\color{color2}#6}}\fi}
+\newcommand{\cvitem}[2]{\hintstyle{#1}&{#2}\\}
+
+\newcommand{\cvjob}[5]{%
+  \cvitem{#1\ifx&#2&\else--#2\fi}{#3. \textit{#4}.%
+    \ifx&#5&\else{\newline\parbox[t]{\linewidth}{\leavevmode\color{color2}#5}}\fi}
 }
 
 \newcommand{\name}[2]{\def\firstname{#1}\def\lastname{#2}}
@@ -68,11 +64,11 @@
 
 \renewcommand*{\maketitle}{%
   \noindent
-  \parbox[b]{\hintscolumnwidth}{%
+  \parbox[b]{\hintscolwidth}{%
     %\framebox{\includegraphics[width=\photowidth]{\photo}}%
     \raisebox{-0.3em}{\includegraphics[width=\photowidth]{\photo}}%
   }%
-  \hspace{\separatorcolumnwidth}%
+  \hspace{\sepcolwidth}%
   \parbox[b]{0.4\linewidth}{%
     {\Huge\firstname{} \lastname} \\[1em]
     {\Large\textcolor{color2}{\textit{\title}}}
@@ -100,18 +96,18 @@
 \titleformat{\section}  % Customize the \section command 
   {\Large\color{color1}\raggedright}
   {}{0em}
-  %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
+  %{}{\hintscolwidth+\sepcolwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
   {}  % Can be used to insert code before the heading
   [\titlerule] % Inserts a horizontal line after the heading
 
 \titleformat{\subsection}
   {\large\color{color1}\raggedright}
   {}{0em}
-  %{}{\hintscolumnwidth+\separatorcolumnwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
+  %{}{\hintscolwidth+\sepcolwidth}   % Can be used to give a prefix to all sections, like 'Section ...'
   {}
 
-\titlespacing*{\section}{0pt}{1.2em}{0.8em}
-\titlespacing*{\subsection}{0pt}{0.8em}{0.5em}
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.25em}
 
 \urlstyle{sf}
 
@@ -140,93 +136,98 @@
 
 \section{Education}
 
-\eduwork{9/2009}{6/2015}
-  {PhD in Physics \textnormal{(expected)}}
-  {University of California, Santa Cruz}
-  {Supervised by \Peter.}
-
-\eduwork{9/2009}{6/2011}
-  {MS in Physics}
-  {University of California, Santa Cruz}
-  {``Spin glasses in the nonextensive regime'',
-   supervised by \Peter.}
-
-\eduwork{8/2005}{5/2009}
-  {BA in Physics and Mathematics}
-  {University of Colorado, Boulder}
-  {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA. \\
-   Research in acoustic vector network analysis supervised by \John.}
+\begin{cvlist}
+  \cvjob{9/2009}{6/2015}
+    {PhD in Physics \textnormal{(expected)}}
+    {University of California, Santa Cruz}
+    {Supervised by \Peter. See ``Research Experience'' below.}
+  \cvjob{9/2009}{6/2011}
+    {MS in Physics}
+    {University of California, Santa Cruz}
+    {``Spin glasses in the nonextensive regime'',
+     supervised by \Peter.}
+  \cvjob{8/2005}{5/2009}
+    {BA in Physics and Mathematics}
+    {University of Colorado, Boulder}
+    {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA. \\
+     Research in acoustic vector network analysis supervised by \John.}
+\end{cvlist}
 
 \subsection{Workshops \& Short Courses}
 
-\eduwork{6/2013}{}
-  {Beg Rohu School of Statistical Physics and Condensed Matter}
-  {Quiberon, France}
-  {Two-week course with special focus on disordered systems.}
-
-\eduwork{9/2012}{}
-  {Efficient Algorithms in Computational Physics}
-  {Bad Honnef, Germany}
-  {Two-week course focusing on Monte Carlo techniques. I assisted students with
-   homework problems during the data analysis portion of the course, taught by
-   my PhD advisor.} 
+\begin{cvlist}
+  \cvjob{6/2013}{}
+    {Beg Rohu School of Statistical Physics and Condensed Matter}
+    {Quiberon, France}
+    {Two-week course with special focus on disordered systems.}
+  \cvjob{9/2012}{}
+    {Efficient Algorithms in Computational Physics}
+    {Bad Honnef, Germany}
+    {Two-week course focusing on Monte Carlo techniques. I assisted students with
+     homework problems during the data analysis portion of the course, taught by
+     my PhD advisor.} 
+\end{cvlist}
 
 \section{Research Experience}
 
-\eduwork{9/2010}{present}%
-  {Graduate Student Researcher}
-  {University of California, Santa Cruz}
-  {With supervisor \Peter, I have studied topics in statistical and
-    computational physics including
-    spin glasses~\cite{wittmann2012spin, wittmann2013low, wittmann2014low},
-    finite-size scaling in high-dimensional systems~\cite{wittmann2014finite},
-    quantum algorithms~\cite{wittmann2014distinguishing},
-    and classical optimization problems~\cite{wittmann2014scheduling}.
-  }
-
-\eduwork{9/2014}{11/2014}
-  {Guest Researcher}
-  {Max Planck Institute for the Physics of Complex Systems, Dresden, Germany}
-  {I studied finite-size scaling in systems above the upper critical dimension
-     and spin glass dynamics using large-scale computer simulations.}
-
-\eduwork{1/2008}{5/2009}
-  {Undergraduate Researcher}
-  {University of Colorado, Boulder}
-  {Supervised by \John{}, I characterized acoustic resonators and worked
-    on extending the capabilities of Dr. Price's existing acoustic
-    reflectometry setup to allow scattering matrix measurements.}
+\begin{cvlist}
+  \cvjob{9/2010}{present}
+    {Graduate Student Researcher}
+    {University of California, Santa Cruz}
+    {With supervisor \Peter, I have studied topics in statistical and
+      computational physics including
+      spin glasses~\cite{wittmann2012spin, wittmann2013low, wittmann2014low},
+      finite-size scaling in high-dimensional systems~\cite{wittmann2014finite},
+      quantum algorithms~\cite{wittmann2014distinguishing},
+      and optimization problems~\cite{wittmann2014scheduling}.}
+  \cvjob{9/2014}{11/2014}
+    {Guest Researcher}
+    {Max Planck Institute for the Physics of Complex Systems, Dresden, Germany}
+    {I studied finite-size scaling in high-dimensional systems and the
+      dynamics of disordered systems using large-scale computer simulations.}
+  \cvjob{1/2008}{5/2009}
+    {Undergraduate Researcher}
+    {University of Colorado, Boulder}
+    {Supervised by \John{}, I characterized acoustic resonators and worked on
+      extending the capabilities of an existing acoustic reflectometry system to
+      allow complete scattering matrix measurements.}
+\end{cvlist}
 
 \section{Teaching \& Outreach}
 
-\eduwork{1/2014}{}
-  {Juror at 2014 USA Young Physicists Tournament}{San Jose, CA}{}
-
-\eduwork{1/2014}{}
-  {Judge at 2014 Pacific Collegiate School Science Fair}{Santa Cruz, CA}{}
-
-\eduwork{9/2009}{9/2011}
-  {TA in Physics and Mathematics}
-  {University of California, Santa Cruz}
-  {Taught lower- and upper-division physics lab courses and led discussion sections in
-   lower-division math and upper-division physics lecture courses.}
-
-\eduwork{8/2008}{5/2009}
-  {Instructor Assistant in Mathematics}
-  {University of Colorado, Boulder}
-  {Led tutorials in supplemental math courses at the precalculus level.}
+\begin{cvlist}
+  \cvjob{1/2014}{}
+    {Juror at 2014 USA Young Physicists Tournament}{San Jose, CA}{}
+  \cvjob{1/2014}{}
+    {Judge at 2014 Pacific Collegiate School Science Fair}{Santa Cruz, CA}{}
+  \cvjob{9/2009}{9/2011}
+    {TA in Physics and Mathematics}
+    {University of California, Santa Cruz}
+    {Taught lower- and upper-division physics lab courses and led discussion sections in
+     lower-division math and upper-division physics lecture courses.}
+  \cvjob{8/2008}{5/2009}
+    {Instructor Assistant in Mathematics}
+    {University of Colorado, Boulder}
+    {Led tutorials in supplemental math courses at the precalculus level.}
+\end{cvlist}
 
 \section{Skills \& Expertise}
 
-\cvitem{Math/Physics}{disordered systems, statistical physics, quantum mechanics,
-  quantum algorithms, graph theory, satisfiability}
-\cvitem{Modeling/\\Analysis}
-{Monte Carlo simulation, nonlinear fitting, error analysis, simulated
-  annealing, genetic algorithms, numerical linear algebra}
-\cvitem{Computer}{C/\CC, Python/Numpy/Scipy, MATLAB/Octave, Mathematica, Pandas,
-  Git, Linux, \LaTeX, HTML/CSS, JavaScript}
-\cvitem{Interests/\\Hobbies}{cycling, hiking, backpacking, playing music
-  (guitar, cello, piano)}
+\begin{tabularx}{\textwidth}{@{}X@{}X@{}}
+\begin{cvlist}
+  \cvitem{Modeling/\\Analysis}
+  {Monte Carlo simulation, nonlinear fitting, error analysis, simulated
+    annealing, genetic algorithms, numerical linear algebra}
+  \cvitem{Math/Physics}{disordered systems, statistical physics, quantum mechanics,
+    quantum algorithms, graph theory, satisfiability}
+\end{cvlist} &
+\begin{cvlist}
+  \cvitem{Computer}{C/\CC, Java, Python/Numpy, MATLAB, Octave, Mathematica,
+    Pandas, Git, Bash, \LaTeX, HTML/CSS, JavaScript}
+  \cvitem{Interests/\\Hobbies}{cycling, hiking, backpacking, music
+    (guitar, cello, piano)}
+\end{cvlist}
+\end{tabularx}
 
 \printbibliography[title={Publications \& Conference Presentations}]
 
