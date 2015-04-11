@@ -70,12 +70,12 @@
 \colorlet{textgray}{black!70}
 \newenvironment{contactinfo}{\begin{itemize}\setlength\itemsep{0em}}{\end{itemize}}
 
-\newenvironment{cvjobs}[1][0.3em]
+\newenvironment{cvjobs}[1][0.5em]
   {\noindent\setlength\extrarowheight{#1}%
    \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hskip\sepcolwidth}X@{}}}
   {\endtabularx}
 
-\newenvironment{cvskills}[1][0.3em]
+\newenvironment{cvskills}[1][0.5em]
   {\noindent\setlength\extrarowheight{#1}%
    \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hskip\sepcolwidth}>{\raggedright\arraybackslash}X@{}}}
   {\endtabularx}
@@ -109,7 +109,7 @@
   \hskip\sepcolwidth%
   \parbox[b]{0.4\linewidth}{%
     {\Huge\heavy\firstname{} \lastname}\\[1em]
-    {\Large\textit{\title}}
+    {\Large\light\textit{\title}}
     \vspace{1em}
   }%
   \hfill%
