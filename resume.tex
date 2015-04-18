@@ -4,15 +4,14 @@
 
 \def\Peter{Dr.~A.~Peter~Young}
 \def\John{Dr.~John~Price}
-\def\CC{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+\def\cpp{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
 
 \name{Matthew}{Wittmann}
 \title{Ph.D. Candidate in Physics}
 \phone{+1 303 552 7753}
 \email{mcwitt@gmail.com}
-\website{mcwitt.github.io}
-\linkedin{\url{linkedin.com/in/mcwittmann}}
-\researchgate{\url{researchgate.net/profile/Matthew_Wittmann}}
+\website{\href{https://mcwitt.github.io}{mcwitt.github.io}}
+\linkedin{\href{https://linkedin.com/in/mcwittmann}{mcwittmann}}
 \address{307 Cayuga St.\newline{} Santa Cruz, CA 95062}
 \photo{me.jpg}
 
@@ -26,7 +25,7 @@
   \cvjob{since 2009}{}
     {PhD in Physics \textnormal{(expected 9/2015)}}
     {University of California, Santa Cruz}
-    {Supervised by \Peter. See ``Research Experience'' below.}
+    {Supervised by \Peter{} (see \nameref{sec:research}).}
   \cvjob{2009}{2011}
     {MS in Physics}
     {University of California, Santa Cruz}
@@ -55,6 +54,7 @@
 \end{cvjobs}
 
 \section{Research Experience}
+\label{sec:research}
 
 \begin{cvjobs}
   \cvjob{since 2010}{}
@@ -103,6 +103,7 @@
 \begin{cvskills}
   \cvskill{Modeling/\\Optimization}{
     Monte~Carlo~simulation,
+    statistics,
     stochastic~optimization,
     nonlinear~fitting,
     numerical~linear~algebra,
@@ -116,19 +117,22 @@
     satisfiability}
 \end{cvskills} &
 \begin{cvskills}
-  \cvskill{Programming/\\Software}{
-    C/\CC,
-    Java,
+  \cvskill{Proficient}{
     Python/NumPy,
-    MATLAB,
-    Octave,
-    Mathematica,
     pandas,
+    C/\cpp,
+    MATLAB,
+    Mathematica,
     Git,
     Bash,
     \LaTeX,
-    HTML/CSS,
-    JavaScript}
+    HTML/CSS}
+  \cvskill{Familiar}{
+    scikit-learn,
+    R,
+    SQL,
+    JavaScript,
+    Java}
   \cvskill{Hobbies}{cycling, hiking, backpacking, music}
 \end{cvskills}
 \end{tabularx}
