@@ -140,8 +140,8 @@
   %{\hskip\hintscolwidth \hskip\sepcolwidth}
   {}
 
-\titlespacing*{\section}{0pt}{1em}{0.5em}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.25em}
+\titlespacing*{\section}{0pt}{1.5em}{0.75em}
+\titlespacing*{\subsection}{0pt}{1em}{0.5em}
 
 \urlstyle{sf}
 
