@@ -36,13 +36,6 @@
 
 %% Load additional packages
 \RequirePackage{array}
-\RequirePackage[
-    style=numeric-comp,
-    %sorting=ydnt,
-    sorting=none,
-    doi=false,
-    url=false
-  ]{biblatex}
 \RequirePackage{xcolor}
 \RequirePackage[cm]{fullpage}
 \RequirePackage{graphicx}

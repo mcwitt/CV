@@ -1,5 +1,14 @@
 \documentclass{cv}
 
+\usepackage[
+    style=numeric-comp,
+    sortcites=false,
+    sorting=ydnt,
+    defernumbers=true,
+    doi=false,
+    url=false
+  ]{biblatex}
+
 \bibliography{refs}
 
 \def\Peter{Dr.~A.~Peter~Young}
@@ -18,6 +27,7 @@
 \begin{document}
 
 \maketitle
+\vfill
 
 \section{Education}
 
@@ -35,7 +45,7 @@
     {BA in Physics and Mathematics}
     {University of Colorado, Boulder}
     {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA. \\
-     Research in acoustic vector network analysis supervised by \John.}
+     Undergraduate thesis supervised by \John.}
 \end{cvjobs}
 
 \subsection{Workshops \& Short Courses}
@@ -62,7 +72,7 @@
     {University of California, Santa Cruz}
     {With supervisor \Peter, I have studied topics in statistical and
      computational physics including
-     spin glasses~\cite{wittmann2012spin, wittmann2013low, wittmann2014low},
+     spin glasses~\cite{wittmann2014low,wittmann2012spin,wittmann2013low},
      finite-size scaling in high-dimensional systems~\cite{wittmann2014finite},
      quantum algorithms~\cite{wittmann2014distinguishing,wittmann2014scheduling},
      and optimization problems~\cite{wittmann2014scheduling}.}
@@ -70,13 +80,13 @@
     {Guest Researcher}
     {Max Planck Institute for the Physics of Complex Systems, Dresden, Germany}
     {I studied finite-size scaling in high-dimensional systems and the
-     dynamics of disordered systems using large-scale computer simulations.}
+     dynamics of disordered systems using large-scale Monte Carlo simulations.}
   \cvjob{2008}{2009}
     {Undergraduate Researcher}
     {University of Colorado, Boulder}
-    {Supervised by \John{}, I characterized acoustic resonators and worked on
-     extending the capabilities of an existing acoustic reflectometry system to
-     allow complete scattering matrix measurements.}
+    {Supervised by \John{}, I characterized acoustic resonators and developed
+     MATLAB code to extend the capabilities of AcousticVNA, a system for acoustic
+     vector network analysis.}
 \end{cvjobs}
 
 \section{Teaching \& Outreach}
@@ -137,6 +147,7 @@
 \end{cvskills}
 \end{tabularx}
 
-\printbibliography[title={Publications \& Conference Presentations}]
+\printbibliography[title={Publications},type=article]
+\printbibliography[title={Conferences},type=unpublished,heading=subbibliography]
 
 \end{document}
