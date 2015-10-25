@@ -1,4 +1,4 @@
-\documentclass{cv}
+\documentclass[11pt,serif]{cv}
 
 \usepackage[
     style=numeric-comp,
@@ -16,144 +16,171 @@
 \def\cpp{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
 
 \name{Matthew}{Wittmann}
-\title{PhD Candidate in Physics}
+\belowname{Palo Alto, CA}
 \phone{+1 303 552 7753}
 \email{mcwitt@gmail.com}
-\website{\href{https://mcwitt.github.io}{mcwitt.github.io}}
-\linkedin{\href{https://linkedin.com/in/mcwittmann}{mcwittmann}}
-\address{307 Cayuga St.\newline{} Santa Cruz, CA 95062}
-\photo{me.jpg}
+\website{\href{https://mcwitt.github.io}{\nolinkurl{mcwitt.github.io}}}
+\linkedin{\href{https://linkedin.com/in/mcwittmann}{\nolinkurl{mcwittmann}}}
+\github{\href{https://github.com/mcwitt}{\nolinkurl{github.com/mcwitt}}}
+\address{Palo Alto, CA}
+%\photo{me.jpg}
+\photo{}
 
 \begin{document}
 
 \maketitle
+\vskip-5em
 \vfill
 
 \section{Education}
 
 \begin{cvjobs}
-  \cvjob{since 2009}{}
-    {PhD in Physics \textnormal{(expected 9/2015)}}
-    {University of California, Santa Cruz}
-    {Supervised by \Peter{} (see \nameref{sec:research}).}
-  \cvjob{2009}{2011}
-    {MS in Physics}
-    {University of California, Santa Cruz}
-    {``Spin glasses in the nonextensive regime'',
-     supervised by \Peter.}
-  \cvjob{2005}{2009}
+  \cvjob{2015}{}
+    {PhD in Physics}
+    {University of California, Santa Cruz}{}
+    %{Supervised by \Peter{} (see \nameref{sec:research}).}
+  \cvjob{2009}{}
     {BA in Physics and Mathematics}
-    {University of Colorado, Boulder}
-    {\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA. \\
-     Undergraduate thesis supervised by \John.}
+    {University of Colorado, Boulder}{}
+    %{\textit{Summa Cum Laude} with minor in Computer Science, 3.8 GPA. \\
+    % Undergraduate thesis supervised by \John.}
 \end{cvjobs}
 
-\subsection{Workshops \& Short Courses}
+%\subsection{Workshops \& Short Courses}
+%
+%\begin{cvjobs}
+%  \cvjob{6/2013}{}
+%    {Beg Rohu School of Statistical Physics and Condensed Matter}
+%    {Quiberon, France}
+%    {Two-week course with special focus on disordered systems.}
+%  \cvjob{9/2012}{}
+%    {Efficient Algorithms in Computational Physics}
+%    {Bad Honnef, Germany}
+%    {Two-week course focusing on Monte Carlo techniques. I assisted students with
+%     homework problems during the data analysis portion of the course, taught by
+%     my PhD advisor.} 
+%\end{cvjobs}
 
-\begin{cvjobs}
-  \cvjob{6/2013}{}
-    {Beg Rohu School of Statistical Physics and Condensed Matter}
-    {Quiberon, France}
-    {Two-week course with special focus on disordered systems.}
-  \cvjob{9/2012}{}
-    {Efficient Algorithms in Computational Physics}
-    {Bad Honnef, Germany}
-    {Two-week course focusing on Monte Carlo techniques. I assisted students with
-     homework problems during the data analysis portion of the course, taught by
-     my PhD advisor.} 
-\end{cvjobs}
-
-\section{Research Experience}
+\section{Experience}
 \label{sec:research}
 
 \begin{cvjobs}
-  \cvjob{since 2010}{}
+  \cvjob{2015}{}
+    {Fellow}
+    {Insight Data Science}
+    {%
+      \begin{itemize}
+        \item Created
+          \href{http://scenicstroll.xyz}{\texttt{scenicstroll.xyz}}, an app
+          that recommends scenic walking routes
+        \item Retreived and stored $\sim 300$k geotagged photos from Flickr and
+          Bay Area street data from OpenStreetMap using Python and PostgreSQL
+        \item Located scenic areas using spatial clustering and found optimal
+          scenic walking tours using GIS tools and graph search
+        \item Built web app using Flask, Bootstrap, and jQuery; deployed on AWS
+      \end{itemize}
+    }
+  \cvjob{2010}{2015}
     {Graduate Student Researcher}
     {University of California, Santa Cruz}
-    {With supervisor \Peter, I have studied topics in statistical and
-     computational physics including
-     spin glasses~\cite{wittmann2015connection,wittmann2014low,wittmann2012spin,wittmann2013low},
-     finite-size scaling in high-dimensional systems~\cite{wittmann2014finite},
-     quantum algorithms~\cite{wittmann2014distinguishing,wittmann2014scheduling},
-     and optimization problems~\cite{wittmann2014scheduling}.}
+    {%
+      \begin{itemize}[topsep=0pt]
+        \item Probed the low-temperature phase of ``spin-glass'' models using
+          Monte Carlo simulations
+        \item Developed simulations of disordered systems, in C and Python, for
+          large-scale deployment on research computer clusters
+        \item Analyzed large ($\sim 10$ GB) data sets from simulations using
+          Python, pandas, and HDF5
+        \item Published 4 first-author papers on original research and 2
+          additional papers in collaboration with international research groups
+        \item Taught 6 upper- and lower-division Physics and Math courses as a
+          teaching assistant
+      \end{itemize}
+    }
   \cvjob{2014}{}
     {Guest Researcher}
-    {Max Planck Institute for the Physics of Complex Systems, Dresden, Germany}
-    {I studied finite-size scaling in high-dimensional systems and the
-     dynamics of disordered systems using large-scale Monte Carlo simulations.}
+    {Max Planck Institute, Dresden, Germany}
+    {%
+      \begin{itemize}
+        \item Developed code in C and Python for large-scale simulations of
+          spin-glass dynamics
+        \item Performed simulations to investigate the relationship between the
+          dynamics of spin glass models and a type of static calculation
+        \item Analyzed large datasets involving averages over thousands of
+          models, each with millions of degrees of freedom
+      \end{itemize}
+    }
   \cvjob{2008}{2009}
-    {Undergraduate Researcher}
+    {Undergraduate Research Assistant}
     {University of Colorado, Boulder}
-    {Supervised by \John{}, I characterized acoustic resonators and developed
-     MATLAB code to extend the capabilities of AcousticVNA, a system for acoustic
-     vector network analysis.}
+    {%
+      \begin{itemize}
+        \item Developed AcousticVNA, a low-cost system for vector network
+          analysis of acoustic networks, in collaboration with the Price group
+        \item Characterized modes of acoustic resonators using finite-element
+          analysis and compared with experimental results for validation
+        \item Developed an improved calibration technique for vector network
+          measurements and implemented in MATLAB
+      \end{itemize}
+    }
 \end{cvjobs}
 
-\section{Teaching \& Outreach}
+%\section{Teaching \& Outreach}
+%
+%\begin{cvjobs}
+%  \cvjob{2014}{}
+%    {Juror at USA Young Physicists Tournament}{San Jose, CA}{}
+%  \cvjob{}{}
+%    {Judge at Pacific Collegiate School Science Fair}{Santa Cruz, CA}{}
+%  \cvjob{2009}{2011}
+%    {TA in Physics and Mathematics}
+%    {University of California, Santa Cruz}
+%    {Taught lower- and upper-division physics lab courses and led discussion sections in
+%     lower-division math and upper-division physics lecture courses.}
+%  \cvjob{2008}{2009}
+%    {Instructor Assistant in Mathematics}
+%    {University of Colorado, Boulder}
+%    {Led tutorials in supplemental math courses at the precalculus level.}
+%\end{cvjobs}
 
-\begin{cvjobs}
-  \cvjob{2014}{}
-    {Juror at USA Young Physicists Tournament}{San Jose, CA}{}
-  \cvjob{}{}
-    {Judge at Pacific Collegiate School Science Fair}{Santa Cruz, CA}{}
-  \cvjob{2009}{2011}
-    {TA in Physics and Mathematics}
-    {University of California, Santa Cruz}
-    {Taught lower- and upper-division physics lab courses and led discussion sections in
-     lower-division math and upper-division physics lecture courses.}
-  \cvjob{2008}{2009}
-    {Instructor Assistant in Mathematics}
-    {University of Colorado, Boulder}
-    {Led tutorials in supplemental math courses at the precalculus level.}
-\end{cvjobs}
+\section{Skills}
 
-\section{Skills \& Expertise}
-
-\begin{tabularx}{\textwidth}{@{}XX@{}}
 \begin{cvskills}
-  \cvskill{Modeling/\\Optimization}{
-    Monte~Carlo~simulation,
-    statistics,
-    stochastic~optimization,
-    machine~learning,
+  \cvskill{Analysis}{
+    Probability~and~statistics,
+    predictive~modeling,
     numerical~linear~algebra,
-    error~analysis
+    Monte~Carlo~methods,
+    optimization
   }
-  \cvskill{Math/\\Physics}{
-    disordered~systems,
-    statistical~physics,
-    quantum~mechanics,
-    quantum~algorithms,
-    graph~theory,
-    satisfiability
-  }
-\end{cvskills} &
-\begin{cvskills}
-  \cvskill{Proficient}{
-    Python/NumPy,
-    pandas,
+  \cvskill{Languages}{
+    Python,
     C/\cpp,
     MATLAB,
     Mathematica,
+    Java*,
+    R*,
     Git,
     Bash,
+    SQL,
     \LaTeX,
     HTML/CSS,
     JavaScript
+    (*some experience)
   }
-  \cvskill{Familiar}{
+  \cvskill{Tools}{
+    NumPy,
+    SciPy,
     scikit-learn,
-    R,
-    D3.js,
-    SQL,
-    Java
+    pandas,
+    Flask,
+    jQuery,
+    D3.js
   }
-  \cvskill{Hobbies}{cycling, hiking, backpacking, music}
 \end{cvskills}
-\end{tabularx}
 
-\printbibliography[title={Publications},type=article,prefixnumbers={J}]
-\printbibliography[title={Submitted papers},type=online,prefixnumbers={U},heading=subbibliography]
-\printbibliography[title={Conferences},type=misc,prefixnumbers={C},heading=subbibliography]
+%\printbibliography[title={Publications},type=article,prefixnumbers={J}]
+%\printbibliography[title={Submitted papers},type=online,prefixnumbers={U},heading=subbibliography]
+%\printbibliography[title={Conferences},type=misc,prefixnumbers={C},heading=subbibliography]
 
 \end{document}
