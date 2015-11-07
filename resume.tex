@@ -59,7 +59,7 @@
 %    {Two-week course focusing on Monte Carlo techniques. I assisted students with
 %     homework problems during the data analysis portion of the course, taught by
 %     my PhD advisor.} 
-%\end{cvjobs}
+%\end{cvjob}
 
 \section{Experience}
 \label{sec:research}
@@ -71,13 +71,13 @@
     {%
       \begin{itemize}
         \item Created
-          \href{http://scenicstroll.xyz}{\texttt{scenicstroll.xyz}}, an app
+          \href{http://scenicstroll.xyz}{\texttt{scenicstroll.xyz}}, a web app
           that recommends scenic walking routes
         \item Retreived and stored $\sim 300$k geotagged photos from Flickr and
-          Bay Area street data from OpenStreetMap using Python and PostgreSQL
-        \item Located scenic areas using spatial clustering and found optimal
-          scenic walking tours using GIS tools and graph search
-        \item Built web app using Flask, Bootstrap, and jQuery; deployed on AWS
+          SF street data from OpenStreetMap using Python and PostgreSQL
+        \item Designed algorithm to find scenic routes using kernel density
+          estimation and graph search
+        \item Built frontend using Flask, Bootstrap, jQuery, and Leaflet.js; deployed on AWS
       \end{itemize}
     }
   \cvjob{2010}{2015}
@@ -87,13 +87,13 @@
       \begin{itemize}[topsep=0pt]
         \item Probed the low-temperature phase of ``spin-glass'' models using
           Monte Carlo simulations
-        \item Developed simulations of disordered systems, in C and Python, for
-          large-scale deployment on research computer clusters
+        \item Developed simulations in C and Python for deployment on research
+          computer clusters
         \item Analyzed large ($\sim 10$ GB) data sets from simulations using
           Python, pandas, and HDF5
-        \item Published 4 first-author papers on original research and 2
-          additional papers in collaboration with international research groups
-        \item Taught 6 upper- and lower-division Physics and Math courses as a
+        \item Published 4 first-author papers on original research and one
+          with international collaborators
+        \item Taught 6 lower- and upper-division Physics and Math courses as a
           teaching assistant
       \end{itemize}
     }
@@ -102,12 +102,15 @@
     {Max Planck Institute, Dresden, Germany}
     {%
       \begin{itemize}
-        \item Developed code in C and Python for large-scale simulations of
+        \item
+          Developed algorithms in C and Python for large-scale simulations of
           spin-glass dynamics
-        \item Performed simulations to investigate the relationship between the
-          dynamics of spin glass models and a type of static calculation
-        \item Analyzed large datasets involving averages over thousands of
-          models, each with millions of degrees of freedom
+        \item
+          Performed simulations to investigate the relationship between spin
+          glass dynamics and state-of-the art static calculations
+        \item
+          Analyzed large datasets involving averages over thousands of models,
+          each with millions of degrees of freedom
       \end{itemize}
     }
   \cvjob{2008}{2009}
@@ -115,12 +118,15 @@
     {University of Colorado, Boulder}
     {%
       \begin{itemize}
-        \item Developed AcousticVNA, a low-cost system for vector network
-          analysis of acoustic networks, in collaboration with the Price group
-        \item Characterized modes of acoustic resonators using finite-element
-          analysis and compared with experimental results for validation
-        \item Developed an improved calibration technique for vector network
-          measurements and implemented in MATLAB
+        \item
+          Developed AcousticVNA, a low-cost system for acoustic network
+          analysis, in collaboration with the Price group
+        \item
+          Validated system performance by comparison with results of
+          finite-element analysis
+        \item
+          Developed and implemented an extended calibration technique for
+          vector network measurements using MATLAB
       \end{itemize}
     }
 \end{cvjobs}
@@ -146,36 +152,34 @@
 \section{Skills}
 
 \begin{cvskills}
-  \cvskill{Analysis}{
+  \cvskill{Specialties}{
     Probability~and~statistics,
     predictive~modeling,
-    numerical~linear~algebra,
-    Monte~Carlo~methods,
-    optimization
+    Monte~Carlo~simulation,
+    optimization,
+    software~engineering%
+    \footnote{\label{fn:some}familiar; interested in developing}
   }
   \cvskill{Languages}{
     Python,
-    C/\cpp,
-    MATLAB,
-    Mathematica,
-    Java*,
-    R*,
-    Git,
-    Bash,
+    C,
     SQL,
+    MATLAB,
     \LaTeX,
     HTML/CSS,
-    JavaScript
-    (*some experience)
+    JavaScript,
+    R\footnoteref{fn:some},
+    Scala\footnoteref{fn:some},
+    \cpp\footnoteref{fn:some}
   }
   \cvskill{Tools}{
     NumPy,
     SciPy,
-    scikit-learn,
     pandas,
-    Flask,
-    jQuery,
-    D3.js
+    scikit-learn,
+    Git,
+    PostgreSQL,
+    jQuery
   }
 \end{cvskills}
 

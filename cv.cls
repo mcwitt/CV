@@ -65,12 +65,12 @@
 \colorlet{textgray}{black!70}
 \newenvironment{contactinfo}{\begin{itemize}\setlength\itemsep{0em}}{\end{itemize}}
 
-\newenvironment{cvjobs}[1][0.75em]
+\newenvironment{cvjobs}[1][1em]
   {\noindent\setlength\extrarowheight{#1}%
    \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hskip\sepcolwidth}X@{}}}
   {\endtabularx}
 
-\newenvironment{cvskills}[1][0.75em]
+\newenvironment{cvskills}[1][1em]
   {\noindent\setlength\extrarowheight{#1}%
    \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hskip\sepcolwidth}>{\raggedright\arraybackslash}X@{}}}
   {\endtabularx}
@@ -93,6 +93,9 @@
 \newcommand{\github}[1]{\def\github{#1}}
 \newcommand{\address}[1]{\def\address{#1}}
 \newcommand{\photo}[1]{\def\photo{#1}}
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 \setlist{nolistsep}
 \setlist[itemize]{leftmargin=*}
