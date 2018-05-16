@@ -1,0 +1,125 @@
+basics:
+  name: Matt Wittmann
+  label: Data Scientist
+  picture: ""
+  email: mcwitt@gmail.com
+  phone: (303) 552-7753
+  website: http://mcwitt.github.io
+  summary: Full-stack data scientist
+  location:
+    address: 954 Florida St
+    postal_code: CA 94110
+    city: San Francisco
+    country_code: US
+    region: California
+  profiles:
+    - network: LinkedIn
+      username: mcwittmann
+      url: https://www.linkedin.com/in/mcwittmann/
+    - network: GitHub
+      username: mcwitt
+      url: https://github.com/mcwitt/
+  work:
+    - company: Stitch Fix
+      position: Data Scientist
+      website: https://multithreaded.stitchfix.com/
+      start_date: 2016-01-18
+      end_date: ""
+      summary: ""
+      highlights:
+        - Designed interpretable models of inventory performance to guide buying decisions
+        - Built modular and reusable statistical models in Python
+        - Used engineering best practices to deliver high-quality, reproducible analyses
+        - Developed modular tools used in production code across the team
+        - Built APIs and front-ends for internal web applications
+        - >
+          Collaborated with cross-functional partners on algorithm-assisted
+          planning, buying, and routing of merchandise
+    - company: Insight Data Science
+      position: Data Science Fellow
+      website: http://www.insightdatascience.com/
+      start_date: 2015-09-01
+      end_date: 2015-11-01
+      summary: ""
+      highlights:
+        - Created a web app that recommends scenic walking routes
+        - Built road network database using OpenStreetMap data
+        - Designed scenic routing algorithm based on the density of Flickr photos
+        - Built front-end using Flask, Bootstrap and Leaflet.js; deployed on AWS
+    - company: University of California, Santa Cruz
+      position: Graduate Student Researcher
+      website: http://www.physics.ucsc.edu/
+      start_date: 2010-05-01
+      end_date: 2015-09-01
+      summary: ""
+      highlights:
+        - Identified key metrics that capture the behavior of complex systems
+        - Developed mathematical models of phase transitions
+        - Designed algorithms for specialized MCMC simulations on HPC clusters
+        - Analyzed and visualized large datasets using the scientific Python stack
+        - Published 5 papers and presented research at 
+
+  volunteer:
+    company: Delta Analytics
+    position: Volunteer
+    website: http://www.deltanalytics.org/
+    start_date: 2017-01-15
+    end_date: 2017-07-25
+    summary: ""
+    highlights: []
+  education:
+    - institution: University of California, Santa Cruz
+      area: Physics
+      study_type: Ph.D.
+      start_date: 2009-09-01
+      end_date: 2015-09-01
+      gpa: ""
+      courses: []
+    - institution: University of Colorado, Boulder
+      area: Physics and Mathematics
+      study_type: B.A.
+      start_date: 2005-09-01
+      end_date: 2009-05-01
+      gpa: ""
+      courses: []
+    publications:
+      - name: The connection between statics and dynamics of spin glasses
+        publisher: Journal of Statistical Mechanics: Theory and Experiment
+        release_date: 2016-01-26
+        website: http://arxiv.org/abs/1504.07709
+      - name: Finite-size critical scaling in Ising spin glasses in the mean-field regime
+        publisher: Physical Review E
+        release_date: 2016-03-14
+        website: http://arxiv.org/abs/1509.05372
+      - name: Finite-size scaling above the upper critical dimension 
+        publisher: Physical Review E
+        release_date: 2014-12-29
+        website: http://arxiv.org/abs/1410.5296
+      - name: >
+          Low-temperature behavior of the statistics of the overlap distribution
+          in Ising spin-glass models
+        publisher: Physical Review B
+        release_date: 2014-10-27
+        website: http://arxiv.org/abs/1408.2482
+      - name: Spin glasses in the nonextensive regime
+        publisher: Physical Review E
+        release_date: 2012-04-04
+        website: http://arxiv.org/abs/1201.1955 
+     skills:
+       - name: Scientific Python stack
+         level: Advanced
+         keywords:
+           - numpy
+           - pandas
+           - scikit-learn
+           - tensorflow
+           - PyTorch
+      - name: Software Engineering
+        level: Advanced
+        keywords:
+          - git
+          - bash
+          - Postgres
+          - CircleCI
+          - AWS
+
