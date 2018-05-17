@@ -40,9 +40,9 @@ work:
     end_date: 2015-11-01
     summary: ""
     highlights:
-      - Created app that recommends scenic routes between a pair of locations
+      - Created web app that recommends scenic routes between a pair of locations
       - Designed scenic routing algorithm using data from Flickr and OpenStreetMap
-      - Built front-end using Flask, Bootstrap and Leaflet.js; deployed on AWS
+      - Built frontend using Flask, Bootstrap and Leaflet.js; deployed on AWS
   - company: University of California, Santa Cruz
     position: Graduate Student Researcher
     website: http://www.physics.ucsc.edu/
