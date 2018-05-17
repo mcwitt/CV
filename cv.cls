@@ -84,8 +84,9 @@
 }
 
 \newcommand{\cvskill}[2]{\raggedleft\leavevmode\light#1&#2\\}
-\newcommand{\name}[2]{\def\firstname{#1}\def\lastname{#2}}
+\newcommand{\name}[1]{\def\name{#1}}
 \newcommand{\belowname}[1]{\def\belowname{#1}}
+\newcommand{\summary}[1]{\def\summary{#1}}
 \newcommand{\phone}[1]{\def\phone{#1}}
 \newcommand{\email}[1]{\def\email{#1}}
 \newcommand{\website}[1]{\def\website{#1}}
@@ -96,6 +97,7 @@
 \newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
 
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand\labelitemi{$\circ$}
 
 \setlist{nolistsep}
 \setlist[itemize]{leftmargin=*}
@@ -108,21 +110,24 @@
     }%
     \hskip\sepcolwidth
   \fi
-  \parbox[c]{0.6\linewidth}{
-    {\Huge\firstname{} \lastname}\hfill
+  \parbox[b]{0.65\linewidth}{
+    {\Huge\name}\hfill
     {\large\light\textit{\belowname}}
   }%
   \hfill
-  \parbox[c]{0.2\linewidth}{
+  \parbox[b]{0.25\linewidth}{
     \begin{contactinfo}
       \ifx\address\relax\contactitem{mail}{\address}\fi
       \contactitem{phone}{\phone}
       \contactitem{email}{\url{\email}}
-      \contactitem{mouse}{\website}
+      \ifx\website\relax\contactitem{mouse}{\website}\fi
       \contactitem{lilogo}{\linkedin}
       \contactitem{github}{\github}
     \end{contactinfo}
-  }%
+  }
+  \vspace{2em}
+
+  \noindent\large\summary
 }
 
 \titleformat{\section}  % Customize the \section command 

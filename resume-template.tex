@@ -1,0 +1,94 @@
+\documentclass[12pt,serif]{cv}
+
+\usepackage[
+    style=numeric-comp,
+    sortcites=false,
+    sorting=ydnt,
+    defernumbers=true,
+    url=false,
+    maxbibnames=5
+  ]{biblatex}
+
+\name{\VAR{basics.name}}
+%\belowname{\VAR{basics.location.city}, \VAR{basics.location.region}}
+\summary{\VAR{basics.summary}}
+\phone{\VAR{basics.phone}}
+\email{\VAR{basics.email}}
+%\website{\href{\VAR{basics.website}}{\VAR{basics.website}}}
+\linkedin{\href{\VAR{profiles
+                     | selectattr('network', 'equalto', 'LinkedIn')
+                     | list
+                     | map(attribute='url')
+                     | first}}{\nolinkurl{
+                 \VAR{profiles
+                     | selectattr('network', 'equalto', 'LinkedIn')
+                     | list
+                     | map(attribute='username')
+                     | first}  
+                 }}}
+\github{\href{\VAR{profiles
+                   | selectattr('network', 'equalto', 'GitHub')
+                   | list
+                   | map(attribute='url')
+                   | first}}{\nolinkurl{
+               \VAR{profiles
+                   | selectattr('network', 'equalto', 'GitHub')
+                   | list
+                   | map(attribute='username')
+                   | first}
+               }}}
+
+\address{\VAR{basics.location.city}, \VAR{basics.location.region}}
+%\photo{me.jpg}
+\photo{}
+
+\begin{document}
+
+\maketitle
+%\vspace{-5em}
+%\vfill
+
+\section{Experience}
+\label{sec:experience}
+
+\begin{cvjobs}
+  %% for w in work
+  \cvjob
+    {\VAR{w.start_date | format_date('%Y')}}
+    {\VAR{w.end_date | format_date('%Y')}}
+    {\VAR{w.position}}
+    {\VAR{w.company}}
+    {%
+      \begin{itemize}
+        %% for h in w.highlights
+        \item \VAR{h}
+        %% endfor
+      \end{itemize}
+    }
+  %% endfor
+\end{cvjobs}
+
+\section{Skills}
+
+\begin{cvskills}
+  %% for s in skills
+  \cvskill{\VAR{s.name}}{
+    \VAR{s.keywords | join('$\,\cdot\,$')}
+  }
+  %% endfor
+\end{cvskills}
+
+\section{Education}
+
+\begin{cvjobs}
+  %% for e in education
+  \cvjob
+    {\VAR{e.start_date | format_date('%Y')}}
+    {\VAR{e.end_date | format_date('%Y')}}
+    {\VAR{e.study_type} in \VAR{e.area}}
+    {\VAR{e.institution}}
+    {}
+  %% endfor
+\end{cvjobs}
+
+\end{document}
