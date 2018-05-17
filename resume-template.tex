@@ -45,8 +45,7 @@
 \begin{document}
 
 \maketitle
-%\vspace{-5em}
-%\vfill
+\vfill
 
 \section{Experience}
 \label{sec:experience}
@@ -73,7 +72,7 @@
 \begin{cvskills}
   %% for s in skills
   \cvskill{\VAR{s.name}}{
-    \VAR{s.keywords | join('$\,\cdot\,$')}
+    \VAR{s.keywords | join(' $\cdot$ ')}
   }
   %% endfor
 \end{cvskills}
@@ -90,5 +89,7 @@
     {}
   %% endfor
 \end{cvjobs}
+
+\vfill
 
 \end{document}

@@ -79,7 +79,8 @@
 \newcommand{\contactitem}[2]{\item[\light\icon{#1}]{\light\footnotesize#2}}
 
 \newcommand{\cvjob}[5]{%
-  \leavevmode\light\raggedleft#1\ifthenelse{\isempty{#2}}{}{--#2} & {\leavevmode{\standout#3}. \textit{#4}.}%
+  \leavevmode\light\raggedleft#1\ifthenelse{\isempty{#2}}{}{--#2} &
+  {\leavevmode{\standout#3} $\,\cdot\,$ \textit{#4}}
   \ifthenelse{\isempty{#5}}{}{\newline\parbox[b]{\linewidth}{\leavevmode\light#5}}\\
 }
 
@@ -125,7 +126,7 @@
       \contactitem{github}{\github}
     \end{contactinfo}
   }
-  \vspace{2em}
+  \vspace{3em}
 
   \noindent\large\summary
 }
