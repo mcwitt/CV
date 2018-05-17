@@ -41,8 +41,7 @@ work:
     summary: ""
     highlights:
       - Created app that recommends scenic routes between a pair of locations
-      - Built road network database using Postgres/PostGIS from OpenStreetMap data
-      - Designed scenic routing algorithm based on the density of Flickr photos
+      - Designed scenic routing algorithm using data from Flickr and OpenStreetMap
       - Built front-end using Flask, Bootstrap and Leaflet.js; deployed on AWS
   - company: University of California, Santa Cruz
     position: Graduate Student Researcher
