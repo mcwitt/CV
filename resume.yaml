@@ -114,6 +114,7 @@ skills:
       - git
       - bash
       - Linux
+      - Docker
       - CircleCI
   - name: DB/Infra
     level: Advanced
