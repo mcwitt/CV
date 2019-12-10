@@ -9,7 +9,7 @@ def format_date(date, fmt='%Y-%m-%d'):
 
 def resume(data, template):
     with open('resume.yaml') as f:
-        r = yaml.load(f)
+        r = yaml.load(f, Loader=yaml.FullLoader)
 
     latex_env = jinja2.Environment(
         block_start_string='\BLOCK{',
