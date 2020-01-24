@@ -1,13 +1,13 @@
 basics:
   name: Matthew Wittmann
-  label: Data Scientist
+  label: Data Scientist \& Software Engineer
   picture: ""
   email: mcwitt@gmail.com
   phone: (303) 552-7753
   website: http://mcwitt.github.io
-  summary: Full-stack data scientist and ML engineer with experience in forecasting.
+  summary: Data Scientist \& Software Engineer
   location:
-    address: 954 Florida St
+    address: 2603 19th St
     postal_code: CA 94110
     city: San Francisco
     country_code: US
@@ -20,11 +20,22 @@ profiles:
     username: mcwitt
     url: https://github.com/mcwitt/
 work:
+  - company: Scoop Technologies
+    position: Data Engineer
+    website: https://www.takescoop.com/
+    start_date: 2018-10-29
+    end_date: 2019-12-06
+    summary: ""
+    highlights:
+      - Built fault-tolerant data pipelines in Scala+Spark to serve mission-critical reporting and ML applications
+      - Designed system for geospatial data aggregation \& analytics based on Uber's H3
+      - Improved and standardized CI/CD pipelines for Scala projects, promoting code quality and boosting developer productivity
+      - Created template for internal Scala applications, reducing fragmentation and boosting productivity
   - company: Stitch Fix
     position: Data Scientist
     website: https://multithreaded.stitchfix.com/
     start_date: 2016-01-18
-    end_date: present
+    end_date: 2018-09-01
     summary: ""
     highlights:
       - Designed interpretable models of inventory performance to guide buying decisions
@@ -99,35 +110,35 @@ publications:
     release_date: 2012-04-04
     website: http://arxiv.org/abs/1201.1955
 skills:
-  - name: Python
+  - name: Data Science \& ML
     level: Advanced
     keywords:
-      - NumPy
-      - pandas
-      - scikit-learn
-      - tensorflow
-      - PyMC3
-      - Flask
-  - name: Engineering
+      - Python DS stack
+      - Jupyter
+      - TensorFlow
+  - name: Software engineering
+    level: Advanced
+    keywords:
+      - Python
+      - Scala
+      - Functional Programming
+  - name: Data Engineering
+    level: Advanced
+    keywords:
+      - Spark/Hadoop
+      - Postgres
+      - AWS
+  - name: Workflow tooling
     level: Advanced
     keywords:
       - git
-      - bash
       - Linux
       - Docker
-      - CircleCI
-  - name: DB/Infra
-    level: Advanced
-    keywords:
-      - PySpark
-      - Hive
-      - Postgres
-      - AWS
+      - CI/CD
   - name: Frontend
     level: Intermediate
     keywords:
       - React
       - Redux
       - webpack
-      - Bootstrap
       - D3.js
