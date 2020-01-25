@@ -111,7 +111,7 @@ skills:
   - name: Data Science \& ML
     level: Advanced
     highlights:
-      - Academic+industry background in statistical modeling, model evaluation, and reproducible analysis
+      - Background in statistical modeling, model evaluation, and reproducible analysis
       - Strong research initiative combined with drive to achieve practical results
       - Industry experience in algorithm design and business integration
     keywords:
@@ -124,7 +124,6 @@ skills:
     highlights:
       - Industry experience in Python and Scala
       - Interested in functional programming and type-driven design; experience in Haskell
-      - Non-industry experience with C; familiarity with C++ and Java
       - Proficient with tools for containerization and reproducible builds (Docker, Nix)
       - Industry experience maintaining CI/CD pipelines (CircleCI)
       - Comfortable collaborating in Agile environments
@@ -140,10 +139,10 @@ skills:
   - name: Data Engineering
     level: Advanced
     highlights:
-      - Building resilient, distributed data pipelines using Apache Spark
-      - OLAP data modeling
-      - Working knowledge of Postgres
-      - Deploying distributed applications in AWS cloud
+      - Fault-tolerant data pipelines using Apache Spark
+      - OLAP modeling for data warehousing
+      - SQL, basic Postgres DB admininstration
+      - Spark/Hadoop deployments in Amazon EMR
     keywords:
       - Apache Spark
       - Postgres
