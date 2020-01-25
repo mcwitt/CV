@@ -63,17 +63,16 @@
 
 \colorlet{primary}{blue!70!green!90}
 \colorlet{textgray}{black!70}
-\newenvironment{contactinfo}{\begin{itemize}\setlength\itemsep{0em}}{\end{itemize}}
+\newenvironment{contactinfo}{\begin{itemize}}{\end{itemize}}
 
 \newenvironment{cvjobs}[1][1em]
   {\noindent\setlength\extrarowheight{#1}%
    \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hskip\sepcolwidth}X@{}}}
   {\endtabularx}
 
-\newenvironment{cvskills}[1][1em]
-  {\noindent\setlength\extrarowheight{#1}%
-   \tabularx{\linewidth}[t]{@{}p{\hintscolwidth}@{\hskip\sepcolwidth}>{\raggedright\arraybackslash}X@{}}}
-  {\endtabularx}
+\newenvironment{cvskills}[1]
+  {\paragraph{\bf#1}\begin{itemize}}
+  {\end{itemize}}
 
 \newcommand{\icon}[1]{\includegraphics[width=\iconwidth]{#1}}
 \newcommand{\contactitem}[2]{\item[\light\icon{#1}]{\light\footnotesize#2}}
@@ -111,12 +110,14 @@
     }%
     \hskip\sepcolwidth
   \fi
-  \parbox[b]{0.65\linewidth}{
-    {\Huge\name}\hfill
-    {\large\light\textit{\belowname}}
-  }%
+  \begin{minipage}[t]{0.8\linewidth}
+    \Huge{\name}
+
+    \noindent\large\vskip 1em\summary{}
+    \ifx\belowname\relax$\,\cdot\,$\light\textit{\belowname}\fi
+  \end{minipage}
   \hfill
-  \parbox[b]{0.25\linewidth}{
+  \begin{minipage}[t]{0.2\linewidth}
     \begin{contactinfo}
       \ifx\address\relax\contactitem{mail}{\address}\fi
       \contactitem{phone}{\phone}
@@ -125,10 +126,7 @@
       \contactitem{lilogo}{\linkedin}
       \contactitem{github}{\github}
     \end{contactinfo}
-  }
-  \vspace{3em}
-
-  \noindent\large\summary
+  \end{minipage}
 }
 
 \titleformat{\section}  % Customize the \section command 

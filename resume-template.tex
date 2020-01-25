@@ -1,4 +1,4 @@
-\documentclass[12pt,serif]{cv}
+\documentclass[11pt,serif]{cv}
 
 \usepackage[
     style=numeric-comp,
@@ -45,7 +45,6 @@
 \begin{document}
 
 \maketitle
-\vfill
 
 \section{Experience}\label{sec:experience}
 
@@ -68,13 +67,15 @@
 
 \section{Skills}
 
-\begin{cvskills}
-  %% for s in skills
-  \cvskill{\VAR{s.name}}{
-    \VAR{s.keywords | join(' $\cdot$ ')}
-  }
+%% for s in skills
+\subsection{\VAR{s.name}}
+
+\begin{itemize}
+  %% for hl in s.highlights
+  \item \VAR{hl}
   %% endfor
-\end{cvskills}
+\end{itemize}
+%% endfor
 
 \section{Education}
 
