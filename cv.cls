@@ -56,7 +56,7 @@
 \newlength{\iconwidth}
 \newlength{\photowidth}
 
-\setlength{\hintscolwidth}{5em}
+\setlength{\hintscolwidth}{3em}
 \setlength{\sepcolwidth}{1.5em}
 \setlength{\iconwidth}{0.9em}
 \setlength{\photowidth}{\hintscolwidth}
@@ -78,7 +78,7 @@
 \newcommand{\contactitem}[2]{\item[\light\icon{#1}]{\light\footnotesize#2}}
 
 \newcommand{\cvjob}[5]{%
-  \leavevmode\light\raggedleft#1\ifthenelse{\isempty{#2}}{}{--#2} &
+  \leavevmode\light\raggedleft\ifthenelse{\isempty{#2}}{#2}{#2\\#1} &
   {\leavevmode{\standout#3} $\,\cdot\,$ \textit{#4}}
   \ifthenelse{\isempty{#5}}{}{\newline\parbox[b]{\linewidth}{\leavevmode\light#5}}\\
 }
