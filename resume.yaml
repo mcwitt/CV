@@ -30,7 +30,6 @@ work:
       - Built fault-tolerant data pipelines in Scala+Spark to serve mission-critical reporting and ML applications
       - Designed system for geospatial data aggregation \& analytics based on Uber's H3
       - Improved and standardized CI/CD pipelines for Scala projects, promoting code quality and boosting developer productivity
-      - Created template for internal Scala applications, reducing fragmentation and boosting productivity
   - company: Stitch Fix
     position: Data Scientist
     website: https://multithreaded.stitchfix.com/
@@ -55,14 +54,13 @@ work:
       - Designed scenic routing algorithm using data from Flickr and OpenStreetMap
       - Built frontend using Flask, Bootstrap and Leaflet.js; deployed on AWS
   - company: University of California, Santa Cruz
-    position: Graduate Student Researcher
+    position: Graduate Student Researcher, Physics
     website: http://www.physics.ucsc.edu/
     start_date: 2010-05-01
     end_date: 2015-09-01
     summary: ""
     highlights:
-      - Identified key metrics that capture the behavior of complex systems
-      - Designed algorithms for specialized MCMC simulations on HPC clusters
+      - Implemented specialized MCMC simulations to run on HPC clusters
       - Analyzed and visualized large datasets using the scientific Python stack
       - Published 5 papers and presented research at academic conferences
 volunteer:
@@ -112,33 +110,41 @@ publications:
 skills:
   - name: Data Science \& ML
     level: Advanced
+    highlights:
+      - Academic+industry background in statistical modeling, model evaluation, and reproducible analysis
+      - Strong research initiative combined with drive to achieve practical results
+      - Industry experience in algorithm design and business integration
     keywords:
-      - Python DS stack
-      - Jupyter
-      - TensorFlow
-  - name: Software engineering
+      - Statistical modeling
+      - Reproducible analysis
+      - Research
+      - Algorithm design and integration
+  - name: Software Engineering
     level: Advanced
+    highlights:
+      - Industry experience in Python and Scala
+      - Interested in functional programming and type-driven design; experience in Haskell
+      - Non-industry experience with C; familiarity with C++ and Java
+      - Proficient with tools for containerization and reproducible builds (Docker, Nix)
+      - Industry experience maintaining CI/CD pipelines (CircleCI)
+      - Comfortable collaborating in Agile environments
     keywords:
       - Python
       - Scala
-      - Functional Programming
+      - Haskell
+      - C
+      - C++
+      - Java
+      - CI/CD
+      - Agile
   - name: Data Engineering
     level: Advanced
+    highlights:
+      - Building resilient, distributed data pipelines using Apache Spark
+      - OLAP data modeling
+      - Working knowledge of Postgres
+      - Deploying distributed applications in AWS cloud
     keywords:
-      - Spark/Hadoop
+      - Apache Spark
       - Postgres
       - AWS
-  - name: Workflow tooling
-    level: Advanced
-    keywords:
-      - git
-      - Linux
-      - Docker
-      - CI/CD
-  - name: Frontend
-    level: Intermediate
-    keywords:
-      - React
-      - Redux
-      - webpack
-      - D3.js
